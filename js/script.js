@@ -1,0 +1,2 @@
+var Cookies = Cookies.noConflict();
+

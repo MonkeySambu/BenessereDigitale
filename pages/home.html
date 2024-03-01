@@ -1,0 +1,40 @@
+<style>
+    h1,h3,form {
+        text-align: center;
+        font:'Outfit';
+        color: #0f0f0f;
+    }
+</style>
+<form id="insNome">
+    <label for="nome">Inserisci il tuo nome</label>
+    <input type="text" id="name">
+    <input type="button" value="Accedi">
+</form>
+
+<div id="saluti">
+    <h1>BENESSERE DIGITALE</h1>
+    <h3>Benvenuto/a <span id="nome"></span></h3>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+        if(Cookies.get('nome')!= undefined){
+            $("#insNome").hide();
+            $("#saluti").show();
+            $("#nome").text(Cookies.get('nome'));
+        }else{
+            $("#saluti").hide();
+            $("input[type='button']").click(function(){
+                var nome = $("#name").val();
+                if(nome == ""){
+                    alert("Inserisci il tuo nome");
+                    return;
+                }else{
+                    $("#nome").text(nome);
+                    $("#insNome").hide();
+                    $("#saluti").show();
+                    Cookies.set('nome', nome);}
+            });
+        }
+    });

@@ -8,7 +8,18 @@ $(document).ready( () => {
             $("#main").empty();
             $("#main").load("dati.html");
         });
-
+        $("#GRAFICI").click(() => {
+            $("#main").empty();
+            $("#main").load("grafici.html");
+        });
+        $("#INSERIMENTO").click(() => {
+            $("#main").empty();
+            $("#main").load("inserimento.html");
+        });
+        $("#CONFRONTO").click(() => {
+            $("#main").empty();
+            $("#main").load("confronto.html");
+        });
         
     });
     $("#main").load("home.html");
