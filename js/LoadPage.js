@@ -43,7 +43,7 @@ $(document).ready( () => {
             });
             $("#INSERIMENTO").click(() => {
                 $("#main").empty();
-                $("#main").load("inserimento.html");
+                $("#main").load("inserimento&confronto.html",()=>{ preparazione() });
 
                 $("#HOME").removeClass("active");
                 $("#DATI").removeClass("active");
@@ -52,19 +52,12 @@ $(document).ready( () => {
                 $("#CONFRONTO").removeClass("active");
 
             });
-            $("#CONFRONTO").click(() => {
-                $("#main").empty();
-                $("#main").load("confronto.html");
-
-                $("#HOME").removeClass("active");
-                $("#DATI").removeClass("active");
-                $("#CHART").removeClass("active");
-                $("#INSERIMENTO").removeClass("active");
-                $("#CONFRONTO").addClass("active");
-
-            });
             $("#LOGOUT").click(() => {
                 Cookies.remove('nome');
+                for (let i = 0; i < 7; i++) {
+                    Cookies.remove('app' + i);
+                    Cookies.remove("t"+i);
+                }
                 $("#main").empty();
                 $("#main").load("home.html");
 
