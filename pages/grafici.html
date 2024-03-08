@@ -15,9 +15,8 @@
         margin-left: auto;
         margin-right: auto;
     }
-    div{
-        margin-right: 1%;
-        margin-left: 1%;
+    div>div{
+        width: 50%;
     }
 
     tr:nth-child(even) {
@@ -34,10 +33,12 @@
     }
 </style>
 <article>
-        <canvas id="BarWeekChart" style="width:50%; height:20%" ></canvas>
-        <div class="grid">
-        <canvas id="CakeWeek" style="width:100%"></canvas>
+    <div class="grid">
+        <div><canvas id="BarWeekChart" style="width:1000px"></canvas></div>
+        <div><canvas id="CakeWeek"></canvas></div>
+        <div>Tempo medio giornaliero al telefono: <span id="TIME"></span></div>
     </div>
+
 </article>
 <script>
     function graficoSettimana(){
@@ -380,10 +381,11 @@
             },
                 title: {
                     display: true,
-                    text: 'App più usate durante la settimana',
+                    text: 'Tempo al telefono durante la settimana',
                     fontSize: 20,
                 }
             }
         });
+    $("#TIME").text((TotalTime[0]/7).toFixed(2)+" minuti");
     }
 </script>
