@@ -1,7 +1,7 @@
 body{
     background-color: snow;
     font: 1em 'Outfit';
-    
+
 }
 
 body {
@@ -37,37 +37,4 @@ main {
     padding-top: 60px;
     padding-bottom: 5em;
     padding-left: 1em;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-}
-
-li{
-    display: block;
-    color: #202124;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li:hover {
-    background-color: #1fff8f;
-    cursor: pointer;
-}
-
-.active {
-    background-color: #3ddb83;
-}
-
-.active :hover {
-    background-color: #1fc76a;
-    cursor: pointer;
 }

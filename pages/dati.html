@@ -1,0 +1,675 @@
+<style>
+    .grid{
+        display: flex;
+    }
+    .separator{
+        width: 100%;
+        height: 5px;
+        background-color: #bebebe;
+    }
+    h1{
+        text-align: center;
+    }
+    table{
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div{
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+    tr:nth-child(even) {
+        background-color: #bebebe;
+    }
+    tr{
+        row-gap: none;
+    }
+    td{
+        gap: none;
+        padding: none;
+        margin: none;
+        border: none;
+    }
+</style>
+<article>
+    <div class="grid">
+        <div style="width:34%">
+            <h1>Grafici</h1>
+            <canvas id="CakeChartSab"></canvas>
+        </div>
+        <div id="DatiSab" style="width:33%">
+            <h1>Dati</h1>
+        </div>  
+        <div style="width:33%">
+            <h1>Analisi Critica</h1>
+            <p>Sabato ho usato tanto YouTube però guardando video abbastnza lunghi da 25-30 min o da 1,10 1,30 ore;
+                WhatsApp invece l'ho usato per organizzarci per uscire la sera; Google per ricerche di scuola e leggere notizie;
+                Instagram invece per scrivere ad amici o condividere meme; Twich lo uso pricnipalemnte la sera perciò ha un utilizzo minore;
+            </p>
+        </div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="grid">
+        <div style="width:34%">
+            <h1>Grafici</h1>
+            <canvas id="CakeChartDom"></canvas>
+        </div>
+        <div id="DatiDom" style="width:33%">
+            <h1>Dati</h1>
+        </div>  
+        <div style="width:33%">
+            <h1>Analisi Critica</h1>
+            <p>Domenica c'era un torneo di Tekken 8,hostato su Twitch, che ho seguito; Clash of Clans è l'unico gioco mobile che ho e, data la settimana occupata,
+                ho usato la domenica per sistemare il villaggio; 
+                WhatsApp invece l'ho usato per organizzare la settimana,e un progetto; Google leggere notizie; TikTok perchè mi avevevano inviato dei video e, l'algotritmo
+                di tiktok è famoso per far perdere tempo.....; youtube per una recensione di un film che avevo visto;
+            </p>
+        </div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="grid">
+        <div style="width:34%">
+            <h1>Grafici</h1>
+            <canvas id="CakeChartLun"></canvas>
+        </div>
+        <div id="DatiLun" style="width:33%">
+            <h1>Dati</h1>
+        </div>  
+        <div style="width:33%">
+            <h1>Analisi Critica</h1>
+            <p> YouTube è la piattaforma di intrattenimento che più uso, e che contiene i contenuti che ritego più interessanti, però ammento di 
+                guardarla troppo spesso; Documenti perchè la mattina c'è stata la prova generale della "Maratona di Lettura" e il testo lo avevo sul telefono;
+                WhatsApp è il software di messaggistica che più uso o per parlare con amici o con la famiglia;Instagram e TikTock pricnipalemente per condividere meme;
+            </p>
+        </div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="grid">
+        <div style="width:34%">
+            <h1>Grafici</h1>
+            <canvas id="CakeChartMar"></canvas>
+        </div>
+        <div id="DatiMar" style="width:33%">
+            <h1>Dati</h1>
+        </div>  
+        <div style="width:33%">
+            <h1>Analisi Critica</h1>
+            <p> YouTube la uso almeno 30 min al giorno, principlemnte mentre mangio in quanto sono a casa da solo;
+                WhatsApp è tra quelle che usp di più perche comodo e utile per tenersi in contatto e parlare;
+                Clash of Clans ci gioco pricnipalemente nei momenti morti, ad esempio in corriera o alla sera per rilassarmi;
+                Twitch è la piattaform che uso principalmente la sera, o nei pomeriggi come sottofondo mentre faccio i compiti, specialmemte Informatica e TPSIT
+                perchè mi tiene compagnia;
+            </p>
+        </div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="grid">
+        <div style="width:34%">
+            <h1>Grafici</h1>
+            <canvas id="CakeChartMer"></canvas>
+        </div>
+        <div id="DatiMer" style="width:33%">
+            <h1>Dati</h1>
+        </div>  
+        <div style="width:33%">
+            <h1>Analisi Critica</h1>
+            <p> WhatsApp l'ho usata per parlare con amici, per organizzare il ritorno e per parlare la sera con amici, il tempo passato su WhatsApp
+                non lo noti a differenza di altre app ,Twitch alla sera 
+                perchè necessitavo di staccare la mente dopo una giornata pesante stessa cosa per YouTube; Instagram per condividere meme;
+            </p>
+        </div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="grid">
+        <div style="width:34%">
+            <h1>Grafici</h1>
+            <canvas id="CakeChartGio"></canvas>
+        </div>
+        <div id="DatiGio" style="width:33%">
+            <h1>Dati</h1>
+        </div>  
+        <div style="width:33%">
+            <h1>Analisi Critica</h1>
+            <p> Dopo 1 settimana YouTube si conferma l'app che uso di più sul telefono sia perchè lo suo in corriera sia mentre pranzo che nel 
+                pomerggio per rilassarmi; Instagram invence non riesco a giustificare cosìm tanto tempo, non mi sebra di usarlo così tanto;
+                Disney+, invece perchè ho problwmi con la TV in camera; stessa cosa per Prime Video e Twitch.
+            </p>
+        </div>
+    </div>
+    <div class="separator"></div>
+
+    <div class="grid">
+        <div style="width:34%">
+            <h1>Grafici</h1>
+            <canvas id="CakeChartVen"></canvas>
+        </div>
+        <div id="DatiVen" style="width:33%">
+            <h1>Dati</h1>
+        </div>  
+        <div style="width:33%">
+            <h1>Analisi Critica</h1>
+            <p> Dopo 1 settimana YouTube si conferma l'app che uso di più sul telefono sia perchè lo suo in corriera sia mentre pranzo che nel 
+                pomerggio per rilassarmi; WhatsApp si conferma anch'essa il software di messaggistica che più uso o per parlare con amici o con la famiglia;
+                Drive e tutta la Suite Google la uso per la scuola, per leggere e scrivere documenti; 
+                Clash of Clans invece è l'unico gioco mobile che riesco a giocare perchè non richiede troppo tempo e mi rilassa;
+            </p>
+        </div>
+    </div>
+
+</article>
+<script>
+function grafici(){
+    var sabApp=[];
+    var sabTime=[];
+    var domApp=[];
+    var domTime=[];
+    var lunApp=[];
+    var lunTime=[];
+    var marApp=[];
+    var marTime=[]; 
+    var merApp=[];
+    var merTime=[];
+    var gioApp=[];
+    var gioTime=[];
+    var venApp=[];
+    var venTime=[];
+
+    const colorArray = [
+    "#981515", "#793FD1", "#AE3F5A", "#859933", "#8D53C6", "#AC77E1", "#8B4E99", "#227E22", "#205D1D", "#A38219",
+    "#AB22E6", "#16448C", "#469F46", "#D49E32", "#58DB58", "#8E9C46", "#B886D1", "#318CE3", "#B48A9C", "#B4B8DC",
+    "#CB7E3D", "#73AC73", "#C0504D", "#DBB216", "#AF4425", "#D484E3", "#91C591", "#DDA0DD", "#B8F3B8", "#799D6A",
+    "#C67171", "#C88121", "#8A2BE2", "#1E69A3", "#E34C38", "#E65C5C", "#B32F15", "#A8A8C0", "#549F54", "#B56666",
+    "#9A7933", "#4590B4", "#7F7FBC", "#C08080", "#C88141", "#DC4C4C", "#2B65AD", "#6785A8", "#A23333", "#5E5EAA",
+    "#71C671", "#778899", "#9370DB", "#66CDAA", "#9A32CD", "#C7EDCC", "#D7D7D7", "#FF4500", "#808069", "#3A5FCD",
+    "#4682B4", "#8B4789", "#0B86B8", "#D15FEE", "#A9A9A9", "#CD5555", "#E16941", "#DAA520", "#2F4F4F", "#BC8F8F",
+    "#DCDCDC", "#D2B48C", "#B03060", "#98F5FF", "#ADFF2F", "#FFD700", "#FF69B4", "#E6E6FA", "#B4CDCD", "#CD96CD",
+    "#C0FF3E", "#8B2252", "#FF83FA", "#32CD32", "#7A67EE", "#E3A869", "#DEB887", "#556B2F", "#C0FF3E", "#4EEE94",
+    "#FA8072", "#4682B4", "#FFF68F", "#66CDAA", "#008B8B", "#FFA07A", "#FAA460", "#9ACD32", "#ADFF2F", "#32CD32",
+    "#8A2BE2", "#DAA520", "#D2B48C", "#8B008B", "#5F9EA0", "#FF6347", "#FF7F50", "#CD5C5C", "#40E0D0", "#4B0082",
+    "#7FFF00", "#9370DB", "#A0522D", "#CD5C5C", "#BA55D3", "#8B008B", "#8B8989", "#8B3E2F", "#8B4513", "#8A2BE2",
+    "#87CEEB", "#8470FF", "#838B8B", "#808080", "#7FFFD4", "#76EEC6", "#708090", "#6A5ACD", "#6495ED", "#5F9EA0",
+    "#556B2F", "#4B0082", "#483D8B", "#4682B4", "#458B00", "#32CD32", "#2E8B57", "#20B2AA", "#1E90FF", "#1C86EE",
+    "#ff0000","#25d633","#4285f4","#d62976","#6441A5","#0000FF","#000000","lime","gray","lightblue","#C8BEAE","red",
+    ];
+
+    var sabColor=[];
+    var domColor=[];
+    var lunColor=[];
+    var marColor=[];
+    var merColor=[];
+    var gioColor=[];
+    var venColor=[];
+
+    for(var i=0; i<20; i++){
+        sabColor[i]=colorArray[Math.floor(Math.random() * colorArray.length)];
+        domColor[i]=colorArray[Math.floor(Math.random() * colorArray.length)];
+        lunColor[i]=colorArray[Math.floor(Math.random() * colorArray.length)];
+        marColor[i]=colorArray[Math.floor(Math.random() * colorArray.length)];
+        merColor[i]=colorArray[Math.floor(Math.random() * colorArray.length)];
+        gioColor[i]=colorArray[Math.floor(Math.random() * colorArray.length)];
+        venColor[i]=colorArray[Math.floor(Math.random() * colorArray.length)];
+    }
+    sabApp[0]="YouTube";
+    sabTime[0]="71,4";
+    sabApp[1]="WhatsApp";
+    sabTime[1]="40";
+    sabApp[2]="Google";
+    sabTime[2]="22";
+    sabApp[3]="Instagram";
+    sabTime[3]="20";
+    sabApp[4]="Twich";
+    sabTime[4]="10";
+    sabApp[5]="Chrome";
+    sabTime[5]="9";
+    sabApp[6]="CieID";
+    sabTime[6]="9";
+    sabApp[7]="TikTok";
+    sabTime[7]="8";
+    sabApp[8]="Impostazioni";
+    sabTime[8]="8";
+    sabApp[9]="Spotify";
+    sabTime[9]="6";
+    sabApp[10]="BeReal";
+    sabTime[10]="6";
+    sabApp[11]="Orologio";
+    sabTime[11]="4";
+    sabApp[12]="Amazon";
+    sabTime[12]="3";
+    sabApp[13]="Classeviva";
+    sabTime[13]="2";
+    sabApp[14]="Fotocamera";
+    sabTime[14]="1";
+
+    new Chart("CakeChartSab", {
+        type: 'doughnut',
+        data: {
+            labels:
+            sabApp,
+            datasets: [{
+                backgroundColor: 
+                sabColor,
+
+                data: sabTime.map(time => parseInt(time)),
+                }],
+
+                borderColor:[
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'left',
+            },
+                title: {
+                    display: true,
+                    text: 'App più usate sabato',
+                    fontSize: 20,
+                }
+            }
+        });
+$("#DatiSab").append('<table id="tabSab"></table>');
+    for(var i=0; i<sabApp.length; i++){
+        $("#tabSab").append('<tr><td>'+sabApp[i]+'</td><td style="text-align:end">'+sabTime[i]+" minuti"+'</td></tr>');
+    }
+
+    domApp[0]="Twich";
+    domTime[0]="67,2";
+    domApp[1]="Clash Of Clans";
+    domTime[1]="54";
+    domApp[2]="WhatsApp";
+    domTime[2]="45";
+    domApp[3]="TikTok";
+    domTime[3]="40";
+    domApp[4]="YouTube";
+    domTime[4]="27";
+    domApp[5]="Amazon";
+    domTime[5]="18";
+    domApp[6]="Instagram";
+    domTime[6]="17";
+    domApp[7]="Google";
+    domTime[7]="14";
+    domApp[8]="BeReal";
+    domTime[8]="7";
+    domApp[9]="Fotocamera";
+    domTime[9]="3";
+    domApp[10]="Chrome";
+    domTime[10]="2";
+
+    new Chart("CakeChartDom", {
+        type: 'doughnut',
+        data: {
+            labels:
+            domApp,
+            datasets: [{
+                backgroundColor:
+                domColor,
+                data: domTime.map(time => parseInt(time)),
+                }],
+
+                borderColor:[
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+                legend: {
+                    position: 'left',
+                },
+                title: {
+                    display: true,
+                    text: 'App più usate domenica',
+                    fontSize: 20,
+                }
+            }
+        });
+$("#DatiDom").append('<table id="tabDom"></table>');
+    for(var i=0; i<domApp.length; i++){
+        $("#tabDom").append('<tr><td>'+domApp[i]+'</td><td style="text-align:end">'+domTime[i]+" minuti"+'</td></tr>');
+    }
+
+
+    lunApp[0]="YouTube";
+    lunTime[0]="191,4";
+    lunApp[1]="Documenti";
+    lunTime[1]="79,8";
+    lunApp[2]="WhatsApp";
+    lunTime[2]="23";
+    lunApp[3]="Instagram";
+    lunTime[3]="16";
+    lunApp[4]="TikTok";
+    lunTime[4]="8";
+    lunApp[5]="Calcolatrice";
+    lunTime[5]="8";
+    lunApp[6]="PS App";
+    lunTime[6]="7";
+    lunApp[7]="Classeviva";
+    lunTime[7]="6";
+    lunApp[8]="Drive";
+    lunTime[8]="6";
+    lunApp[9]="Google";
+    lunTime[9]="6";
+    lunApp[10]="Orologio";
+    lunTime[10]="3";
+    lunApp[11]="BeReal";
+    lunTime[11]="2";
+    lunApp[12]="Amazon";
+    lunTime[12]="2";
+    lunApp[13]="Classroom";
+    lunTime[13]="1";
+    lunApp[14]="Disney+";
+    lunTime[14]="1";
+
+    new Chart("CakeChartLun", {
+        type: 'doughnut',
+        data: {
+            labels:
+            lunApp,
+            datasets: [{
+                backgroundColor:
+                lunColor,
+                data: lunTime.map(time => parseInt(time)),
+                }],
+
+                borderColor:[
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'left',
+            },
+                title: {
+                    display: true,
+                    text: 'App più usate Lunedì',
+                    fontSize: 20,
+                }
+            }
+        });
+$("#DatiLun").append('<table id="tabLun"></table>');
+    for(var i=0; i<lunApp.length; i++){
+        $("#tabLun").append('<tr><td>'+lunApp[i]+'</td><td style="text-align:end">'+lunTime[i]+" minuti"+'</td></tr>');
+    }
+
+    marApp[0]="YouTube";
+    marTime[0]="61,2";
+    marApp[1]="WhatsApp";
+    marTime[1]="59";
+    marApp[2]="Clash Of Clans";
+    marTime[2]="52";
+    marApp[3]="Twitch";
+    marTime[3]="48";
+    marApp[4]="Instagram";
+    marTime[4]="28";
+    marApp[5]="Spotify";
+    marTime[5]="19";
+    marApp[6]="TikTok";
+    marTime[6]="7";
+    marApp[7]="Google";
+    marTime[7]="6";
+    marApp[8]="X";
+    marTime[8]="3";
+    marApp[9]="Figma";
+    marTime[9]="2";
+    marApp[10]="BeReal";
+    marTime[10]="2";
+    marApp[11]="Play Store";
+    marTime[11]="2";
+    marApp[12]="Orologio";
+    marTime[12]="2";
+    marApp[13]="Documenti";
+    marTime[13]="1";
+    marApp[14]="Discord";
+    marTime[14]="1";
+
+    new Chart("CakeChartMar", {
+        type: 'doughnut',
+        data: {
+            labels:
+            marApp,
+            datasets: [{
+                backgroundColor:
+                marColor,
+                data: marTime.map(time => parseInt(time)),
+                }],
+
+                borderColor:[
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'left',
+            },
+                title: {
+                    display: true,
+                    text: 'App più usate Martedì',
+                    fontSize: 20,
+                }
+            }
+        });
+$("#DatiMar").append('<table id="tabMar"></table>');
+    for(var i=0; i<marApp.length; i++){
+        $("#tabMar").append('<tr><td>'+marApp[i]+'</td><td style="text-align:end">'+marTime[i]+" minuti"+'</td></tr>');
+    }
+    merApp[0]="WhatsApp";
+    merTime[0]="88,8";
+    merApp[1]="Twitch";
+    merTime[1]="39";
+    merApp[2]="YouTube";
+    merTime[2]="12";
+    merApp[3]="Instagram";
+    merTime[3]="11";
+    merApp[4]="Classroom";
+    merTime[4]="9";
+    merApp[5]="Chrome";
+    merTime[5]="9";
+    merApp[6]="Amazon";
+    merTime[6]="8";
+    merApp[7]="Google";
+    merTime[7]="5";
+    merApp[8]="Classeviva";
+    merTime[8]="5";
+    merApp[9]="Documenti";
+    merTime[9]="5";
+    merApp[10]="Clash Of Clans";
+    merTime[10]="5";
+    merApp[11]="Spotify";
+    merTime[11]="4";
+    merApp[12]="BeReal";
+    merTime[12]="4";
+    merApp[13]="Orologio";
+    merTime[13]="4";
+    merApp[14]="Telefono";
+    merTime[14]="3";
+
+    new Chart("CakeChartMer", {
+        type: 'doughnut',
+        data: {
+            labels:
+            merApp,
+            datasets: [{
+                backgroundColor:
+                merColor,
+                data: merTime.map(time => parseInt(time)),
+                }],
+
+                borderColor:[
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'left',
+            },
+                title: {
+                    display: true,
+                    text: 'App più usate Martedì',
+                    fontSize: 20,
+                }
+            }
+        });
+$("#DatiMer").append('<table id="tabMer"></table>');
+    for(var i=0; i<merApp.length; i++){
+        $("#tabMer").append('<tr><td>'+merApp[i]+'</td><td style="text-align:end">'+merTime[i]+" minuti"+'</td></tr>');
+    }
+
+
+    gioApp[0]="YouTube";
+    gioTime[0]="90";
+    gioApp[1]="Instagram";
+    gioTime[1]="46";
+    gioApp[2]="Disney+";
+    gioTime[2]="35";
+    gioApp[3]="WhatsApp";
+    gioTime[3]="32";
+    gioApp[4]="Prime Video";
+    gioTime[4]="25";
+    gioApp[5]="Twitch";
+    gioTime[5]="13";
+    gioApp[6]="Google";
+    gioTime[6]="12";
+    gioApp[7]="Orologio";
+    gioTime[7]="5";
+    gioApp[8]="BeReal";
+    gioTime[8]="5";
+    gioApp[9]="Figma";
+    gioTime[9]="4";
+    gioApp[10]="GitHub";
+    gioTime[10]="4";
+    gioApp[11]="Clash Of Clans";
+    gioTime[11]="4";
+    gioApp[12]="Classeviva";
+    gioTime[12]="3";
+    gioApp[13]="Spotify";
+    gioTime[13]="2";
+    gioApp[14]="Classroom";
+    gioTime[14]="2";
+
+    new Chart("CakeChartGio", {
+        type: 'doughnut',
+        data: {
+            labels:
+            gioApp,
+            datasets: [{
+                backgroundColor:
+                gioColor,
+                data: gioTime.map(time => parseInt(time)),
+                }],
+
+                borderColor:[
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'left',
+            },
+                title: {
+                    display: true,
+                    text: 'App più usate Giovedì',
+                    fontSize: 20,
+                }
+            }
+        });
+$("#DatiGio").append('<table id="tabGio"></table>');
+    for(var i=0; i<gioApp.length; i++){
+        $("#tabGio").append('<tr><td>'+gioApp[i]+'</td><td style="text-align:end">'+gioTime[i]+" minuti"+'</td></tr>');
+    }
+    venApp[0]="YouTube";
+    venTime[0]="132";
+    venApp[1]="WhatsApp";
+    venTime[1]="63";
+    venApp[2]="Drive";
+    venTime[2]="34";
+    venApp[3]="Clash Of Clans";
+    venTime[3]="26";
+    venApp[4]="TikTok";
+    venTime[4]="16";
+    venApp[5]="Google";
+    venTime[5]="15";
+    venApp[6]="Instagram";
+    venTime[6]="13";
+    venApp[7]="Amazon";
+    venTime[7]="10";
+    venApp[8]="Classroom";
+    venTime[8]="10";
+    venApp[9]="Chrome";
+    venTime[9]="7";
+    venApp[10]="BeReal";
+    venTime[10]="7";
+    venApp[11]="Spotify";
+    venTime[11]="5";
+    venApp[12]="Trenitalia";
+    venTime[12]="5";
+    venApp[13]="Classeviva";
+    venTime[13]="4";
+    venApp[14]="ChatGPT";
+    venTime[14]="2";     
+    
+    new Chart("CakeChartVen", {
+        type: 'doughnut',
+        data: {
+            labels:
+            venApp,
+            datasets: [{
+                backgroundColor:
+                venColor,
+                data: venTime.map(time => parseInt(time)),
+                }],
+
+                borderColor:[
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                position: 'left',
+            },
+                title: {
+                    display: true,
+                    text: 'App più usate Giovedì',
+                    fontSize: 20,
+                }
+            }
+        });
+    $("#DatiVen").append('<table id="tabVen"></table>');
+        for(var i=0; i<venApp.length; i++){
+            $("#tabVen").append('<tr><td>'+venApp[i]+'</td><td style="text-align:end">'+venTime[i]+" minuti"+'</td></tr>');
+        }
+        
+    };
+</script>

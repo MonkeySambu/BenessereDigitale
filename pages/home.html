@@ -1,15 +1,59 @@
 <style>
-    h1,h3,form {
+    h1,h3,div {
         text-align: center;
         font:'Outfit';
         color: #0f0f0f;
     }
+    div{                 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: x-large;
+    }
+    label{
+        font-size: 3rem;
+    }
+    input[type="text"]{
+        width: 350px;
+        height: 45px;
+        margin: 10px;
+        font-size: 1.5rem;
+        color: #15803d;
+        border: solid 1px #15803d;
+        background-color: snow;
+        border-radius: 1.5rem;
+        text-align: center;
+    }
+    input[type="button"]{
+        width: 200px;
+        height: 60px;
+        margin: 10px;
+        font-size: 2rem;
+        background-color: snow;
+        color: #15803d;
+        border: solid 1px #15803d;
+        border-radius: 1.5rem;
+    }
+
+    input[type="button"]:hover{
+        background-color: #dcfce7;
+    }
+
+    input[type="button"]:active{
+        background-color: #d1fae5;
+    }
+
 </style>
-<form id="insNome">
+
+<div id="insNome">
     <label for="nome">Inserisci il tuo nome</label>
-    <input type="text" id="name">
+    <br>
+    <input type="text" id="name"value="Mario">
+    <br>
     <input type="button" value="Accedi">
-</form>
+</div>
 
 <div id="saluti">
     <h1>BENESSERE DIGITALE</h1>
@@ -22,9 +66,13 @@
         if(Cookies.get('nome')!= undefined){
             $("#insNome").hide();
             $("#saluti").show();
+            $("#LOGOUT").show();
             $("#nome").text(Cookies.get('nome'));
         }else{
             $("#saluti").hide();
+            $("input[type=text]").click(function(){
+                $(this).val("");
+            });
             $("input[type='button']").click(function(){
                 var nome = $("#name").val();
                 if(nome == ""){
@@ -34,7 +82,12 @@
                     $("#nome").text(nome);
                     $("#insNome").hide();
                     $("#saluti").show();
-                    Cookies.set('nome', nome);}
+                    $("#LOGOUT").show();
+                    Cookies.set('nome', nome);
+                    // ricarico il sito
+                    location.reload();
+                }
             });
+            
         }
     });

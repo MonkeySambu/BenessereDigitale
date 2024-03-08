@@ -1,7 +1,80 @@
+<style>
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        z-index: 2;
+        background-color: snow;
+    }
+
+    li {
+        float: left;
+    }
+    
+    li{
+        display: block;
+        color: #0f0f0f;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #HOME{
+        margin-left: 10px;
+        display: inline-block;
+    }
+    .homeDiv{
+        width: 25px;
+        height: 25px;
+        background-image: url("../asset/home.png");
+        background-size: cover;
+        background-position:center;
+    }
+
+    .homeDiv:active{
+        background-image: url("../asset/home-hover.png");
+    }
+
+    .logoutIco{
+        margin-right: 10px;
+        float:right;
+        width: 25px;
+        height: 24px;
+        background-image: url("../asset/logout.png");
+        background-size: cover;
+        background-size: 35px 34px;
+        background-repeat: no-repeat;
+        background-position:center;
+        background-position-y: center;
+    }
+
+    .logoutIco:active{
+        background-image: url("../asset/logout-hover.png");
+    }
+
+    li:hover {
+        background-color: #10b981;
+        cursor: pointer;
+    }
+    
+    .active {
+        background-color: #059669;
+    }
+    
+    .active:hover {
+        background-color: #047857;
+        cursor: pointer;
+    }
+</style>
+
 <ul>
-    <li id="HOME"> <img src="../asset/home.png"> Home</li>
+    <li id="HOME" class="homeDiv"></li>
     <li id="DATI">Dati Analizzati</li>
     <li id="CHART"> Grafici </li>
     <li id="INSERIMENTO"> Insersici i tuoi dati</li>
     <li id="CONFRONTO">Confronto dati</li>
+    <li id="LOGOUT" class="logoutIco"></li>
 </ul>
+
