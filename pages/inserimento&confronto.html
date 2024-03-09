@@ -146,30 +146,25 @@
         $("#div").hide();
     }
     $("input[type='button']").click(function(){
-        $("#form").hide();
-        $("#div").show();
+
         var appUser = [];
         var timeUser= [];
         timeUser[0]=0;
-        appUser[0]="";
-        if(Cookeis.get("appUser0")!=undefined){
-            for(var i=0; i<10; i++){
-                appUser[i]=Cookeis.get("app"+i);
-                timeUser[i]=Cookeis.get("t"+i);
-            }
-        }else{       
-            for(var i=0; i<10; i++){
-                if(($("#app"+i).val()!="")||($("#t"+i).val()!="")){
+        appUser[0]="";    
+        var e=0;   
+        for(var i=0; i<10; i++){
+            if(($("#app"+i).val()!="")||($("#t"+i).val()!="")){
                     appUser[i]=$("#app"+i).val();
                     timeUser[i]=parseFloat($("#t"+i).val());
-                    Cookeis.set(appUser[i],timeUser[i]);
                 }else{
                     alert("Inserisci tutti i dati");
+                    e=1;
                     break;
                 }    
             }
-        }
-        
+        if(e==0){
+            $("#form").hide();
+            $("#div").show();
         const colorArray = [
         "#981515", "#793FD1", "#AE3F5A", "#859933", "#8D53C6", "#AC77E1", "#8B4E99", "#227E22", "#205D1D", "#A38219",
         "#AB22E6", "#16448C", "#469F46", "#D49E32", "#58DB58", "#8E9C46", "#B886D1", "#318CE3", "#B48A9C", "#B4B8DC",
@@ -260,7 +255,7 @@
                     }
                 },
             }});
-
-    });
+        }
+        });
         
 </script>

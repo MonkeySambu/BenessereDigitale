@@ -54,8 +54,8 @@ $(document).ready( () => {
             });
             $("#LOGOUT").click(() => {
                 Cookies.remove('nome');
-                for (let i = 0; i < 7; i++) {
-                    Cookies.remove('app' + i);
+                for (let i = 0; i < 10; i++) {
+                    Cookies.remove("app" + i);
                     Cookies.remove("t"+i);
                 }
                 $("#main").empty();

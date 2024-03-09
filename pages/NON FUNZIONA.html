@@ -1,0 +1,279 @@
+<style>
+    /*gli input sono affiancati 2 a 2*/
+    input {
+        margin:5px;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        display: inline;
+    }
+
+    label {
+        font-size: 1.25rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    input[type="text"] {
+        height: 35px;
+        font-size: 1.25rem;
+        background-color: snow;
+        color: #15803d;
+        border: solid 1px #15803d;
+        border-radius: 1.5rem;
+        text-align: center;
+    }
+
+    input[type="number"] {
+        height: 35px;
+        font-size: 1.25rem;
+        background-color: snow;
+        color: #15803d;
+        border: solid 1px #15803d;
+        border-radius: 1.5rem;
+        text-align: center;
+    }
+
+    input[type="button"] {
+        height: 40px;
+        margin: 10px;
+        font-size: 1.25rem;
+        background-color: snow;
+        color: #15803d;
+        border: solid 1px #15803d;
+        border-radius: 1.5rem;
+    }
+
+    input[type="button"]:hover{
+        background-color: #dcfce7;
+    }
+
+    input[type="button"]:active{
+        background-color: #d1fae5;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    .grid{
+        display: flex;
+    }
+    .separator{
+        width: 100%;
+        height: 5px;
+        background-color: #bebebe;
+    }
+    h1{
+        text-align: center;
+    }
+    table{
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div{
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+    tr:nth-child(even) {
+        background-color: #bebebe;
+    }
+    tr{
+        row-gap: none;
+    }
+    td{
+        gap: none;
+        padding: none;
+        margin: none;
+        border: none;
+    }
+</style>
+<script src="../js/script.js"></script>
+<form id="form">
+    <label>Insereisci i 10 app piu usate in un giorno</label>
+    <label>Insereisci, in minuti, il tempo di utilizzo</label>
+    <br>
+    <input type="text" id="app1" placeholder="App 1">
+    <input type="number" id="t1" placeholder="10 min">
+    <br>
+    <input type="text" id="app2" placeholder="App 2">
+    <input type="number" id="t2" placeholder="10 min">
+    <br>
+    <input type="text" id="app3" placeholder="App 3">
+    <input type="number" id="t3" placeholder="10 min">
+    <br>
+    <input type="text" id="app4" placeholder="App 4">
+    <input type="number" id="t4" placeholder="10 min">
+    <br>
+    <input type="text" id="app5" placeholder="App 5">
+    <input type="number" id="t5" placeholder="10 min">
+    <br>
+    <input type="text" id="app6" placeholder="App 6">
+    <input type="number" id="t6" placeholder="10 min">
+    <br>
+    <input type="text" id="app7" placeholder="App 7">
+    <input type="number" id="t7" placeholder="10 min">
+    <br>
+    <input type="text" id="app8" placeholder="App 8">
+    <input type="number" id="t8" placeholder="10 min">
+    <br>
+    <input type="text" id="app9" placeholder="App 9">
+    <input type="number" id="t9" placeholder="10 min">
+    <br>
+    <input type="text" id="app10" placeholder="App 10">
+    <input type="number" id="t10" placeholder="10 min">
+    <br>
+    <input type="button" value="Confronta i tuoi dati">
+</form>
+
+<div class="grid" id="div">
+    <div style="width:34%">
+        <h1>Grafico</h1>
+        <canvas id="CakeChartUser"></canvas>
+    </div>
+    <div id="DatiUser" style="width:33%">
+        <h1>Dati</h1>
+    </div> 
+    <div style="width:33%">
+        <h1>Confronto tra 2 dati</h1>
+        <canvas id="BarChartConfronto"></canvas>
+</div>
+
+<script>
+    function preparazione(){
+        if(Cookies.get("appUser0")===undefined){
+            $("input[type='button']").click();
+            console.log("ciao");
+        }else{
+            $("#form").show();
+            $("#div").hide();
+            console.log("ciao2");
+        }
+    }
+    $("input[type='button']").click(function(){
+        var appUser = [];
+        var timeUser= [];
+        var e=0;   
+        timeUser[0]=0;
+        appUser[0]="";
+        if(Cookies.get("appUser0")!=undefined || Cookies.get("appUser0")!=null ){
+            for(var i=0; i<10; i++){
+                appUser[i]=Cookies.get("app"+i);
+                timeUser[i]=Cookies.get("t"+i);
+                e=0;
+            }
+        }else{   
+            for(var i=0; i<10&&e==0; i++){
+                if(($("#app"+i).val()!="")&&($("#t"+i).val()!="")){
+                    appUser[i]=$("#app"+i).val();
+                    timeUser[i]=parseFloat($("#t"+i).val());
+                    Cookies.set("appUser"+i,appUser[i]);
+                    Cookies.set("timeUser"+i,timeUser[i]);
+                    console.log(appUser[i]);
+                    console.log("test");
+                }else{
+                    alert("Inserisci tutti i dati");
+                    e=1;
+                    break;
+                }    
+            }
+            if(e==0) Finalizza();
+        }
+        function Finalizza(){
+            $("#form").hide();
+            $("#div").show();
+            const colorArray = [
+            "#981515", "#793FD1", "#AE3F5A", "#859933", "#8D53C6", "#AC77E1", "#8B4E99", "#227E22", "#205D1D", "#A38219",
+            "#AB22E6", "#16448C", "#469F46", "#D49E32", "#58DB58", "#8E9C46", "#B886D1", "#318CE3", "#B48A9C", "#B4B8DC",
+            "#CB7E3D", "#73AC73", "#C0504D", "#DBB216", "#AF4425", "#D484E3", "#91C591", "#DDA0DD", "#B8F3B8", "#799D6A",
+            "#C67171", "#C88121", "#8A2BE2", "#1E69A3", "#E34C38", "#E65C5C", "#B32F15", "#A8A8C0", "#549F54", "#B56666",
+            "#9A7933", "#4590B4", "#7F7FBC", "#C08080", "#C88141", "#DC4C4C", "#2B65AD", "#6785A8", "#A23333", "#5E5EAA",
+            "#71C671", "#778899", "#9370DB", "#66CDAA", "#9A32CD", "#C7EDCC", "#D7D7D7", "#FF4500", "#808069", "#3A5FCD",
+            "#4682B4", "#8B4789", "#0B86B8", "#D15FEE", "#A9A9A9", "#CD5555", "#E16941", "#DAA520", "#2F4F4F", "#BC8F8F",
+            "#DCDCDC", "#D2B48C", "#B03060", "#98F5FF", "#ADFF2F", "#FFD700", "#FF69B4", "#E6E6FA", "#B4CDCD", "#CD96CD",
+            "#C0FF3E", "#8B2252", "#FF83FA", "#32CD32", "#7A67EE", "#E3A869", "#DEB887", "#556B2F", "#C0FF3E", "#4EEE94",
+            "#FA8072", "#4682B4", "#FFF68F", "#66CDAA", "#008B8B", "#FFA07A", "#FAA460", "#9ACD32", "#ADFF2F", "#32CD32",
+            "#8A2BE2", "#DAA520", "#D2B48C", "#8B008B", "#5F9EA0", "#FF6347", "#FF7F50", "#CD5C5C", "#40E0D0", "#4B0082",
+            "#7FFF00", "#9370DB", "#A0522D", "#CD5C5C", "#BA55D3", "#8B008B", "#8B8989", "#8B3E2F", "#8B4513", "#8A2BE2",
+            "#87CEEB", "#8470FF", "#838B8B", "#808080", "#7FFFD4", "#76EEC6", "#708090", "#6A5ACD", "#6495ED", "#5F9EA0",
+            "#556B2F", "#4B0082", "#483D8B", "#4682B4", "#458B00", "#32CD32", "#2E8B57", "#20B2AA", "#1E90FF", "#1C86EE",
+            "#ff0000","#25d633","#4285f4","#d62976","#6441A5","#0000FF","#000000","lime","gray","lightblue","#C8BEAE","red",
+            ];
+            var color = [];
+            for(var i=0; i<appUser.length; i++){
+                color[i]=colorArray[Math.floor(Math.random()*colorArray.length)]
+            }
+            new Chart("CakeChartUser", {
+                type: 'doughnut',
+                data: {
+                    labels:
+                    appUser,
+                    datasets: [{
+                        backgroundColor:
+                        color,
+                        data: timeUser,
+                        }],
+        
+                        borderColor:[
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)'
+                        ],
+                        borderWidth: 1
+                    },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                        legend: {
+                            position: 'left',
+                        },
+                        title: {
+                            display: true,
+                            text: 'App più usate dell\'utente',
+                            fontSize: 20,
+                        }
+                    }
+                });
+            $("#DatiUser").append('<table id="tabUser"></table>');
+                for(var i=0; i<appUser.length; i++){
+                    $("#tabUser").append('<tr><td>'+appUser[i]+'</td><td style="text-align:end">'+timeUser[i]+" minuti"+'</td></tr>');
+            }
+            var app = ["Youtube","Twitch","Instagram","Clash of Clans","TikTok","Netflix","Whatsapp","Spotify","Chrome","Calcolatrice"];
+            var timeSample = [191.4,67.2,101,58,53,60,130.5,8,30,10];
+            for(var i=0; i<app.length; i++){
+                if(appUser.indexOf(app[i])==-1){
+                    app.push(appUser[i]);
+                }
+            }
+            new Chart("BarChartConfronto", {
+                type: 'bar',
+                data: {
+                    labels: app,
+                    datasets: [{
+                    label: 'App dell\'Utente: '+Cookies.get("name"),
+                    data: timeUser,
+                    backgroundColor: '#a78bfa',
+                    borderColor: '#7c3aed',
+                    borderWidth: 1
+                }, {
+                    label: 'App di Esempio',
+                    data: timeSample,
+                    backgroundColor: '#94ffab',
+                    borderColor: '#d7ffdf',
+                    borderWidth: 1
+                    }]
+                },
+
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                }});
+        }
+    });
+        
+</script>
